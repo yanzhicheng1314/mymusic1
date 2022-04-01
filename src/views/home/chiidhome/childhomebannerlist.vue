@@ -31,8 +31,10 @@
 
 <style scoped>
 .childhomebannerlist{
-  position: relative;
-  margin-top: 100px;
+position: relative;
+    margin-top: 100px;
+    width: 90%;
+    left: 20%;
 }
 .item-title{
   position: relative;

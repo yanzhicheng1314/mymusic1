@@ -1,13 +1,18 @@
 <template>
   <div class="login">
-    <div class="x" @click="xclick">
+    <!-- <div class="x" @click="xclick">
       <span>&lt;</span>
-    </div>
-    <div class="login-img">
+    </div> -->
+    <div>扫码登录</div>
+    <!-- <div class="login-img">
       <img src="../../assets/img/mine/音乐.png" alt="">
-    </div>
-    <div class="login-input" @click="clildlogin">手机号登录</div>
-    <div class="login-create" @click="clildcreate">还没有账号？先去注册吧</div>
+    </div> -->
+    <!-- <div class="login-input" @click="clildlogin">登录</div>
+    <div class="login-create" @click="clildcreate">注册</div> -->
+  <el-dialog title="扫码登录">
+   
+        
+</el-dialog>
   </div>
 </template>
 
@@ -31,13 +36,15 @@
 </script>
 
 <style>
-  .login{
+   .login{
     height: 896px;
-    width: 414px;
+  
     margin: 0 auto;
-    background-color: rgb(223, 216, 216);
+  
     position: relative;
+    border: blue solid;
   }
+  /*
 .x{
   height: 200px;
   margin-left: 20px;
@@ -80,6 +87,6 @@
     line-height: 40px;
     color: red;
     border-radius: 60px; 
-}
+} */
   
 </style>

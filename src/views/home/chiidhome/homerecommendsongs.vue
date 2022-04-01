@@ -38,7 +38,7 @@ export default {
  },
  methods: {
     itemleave(index){
-        console.log(index);
+     
       },
   songclick(id){
 
@@ -58,6 +58,9 @@ export default {
 </script>
 
 <style scoped>
+.homerecommendsongs{
+  margin: 150px auto;
+}
 .item-list{
    display: flex;
    justify-content: space-between;

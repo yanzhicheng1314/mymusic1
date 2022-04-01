@@ -51,8 +51,11 @@ export default {
 
 <style scoped>
 .homealbumnewest {
-  position: relative;
-  height: 500px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    left: 20%;
+    height: 600px;
   
 }
 .grid-content img {

@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="playlisthot">
       <playlisthot :catlist="catlist"/>
   </div>
   
@@ -25,7 +25,7 @@ import {getplaylistcatlist}from'../../network/play'
        * 热门歌单分类
        */
       getplaylistcatlist().then((res)=>{
-        console.log(res);
+     
           this.catlist=res.data.tags
       })
     }
@@ -34,6 +34,9 @@ import {getplaylistcatlist}from'../../network/play'
     
 </script>
 
-<style>
-  
+<style scoped>
+  .playlisthot{
+    /* display: flex;
+    justify-content: center; */
+  }
 </style>

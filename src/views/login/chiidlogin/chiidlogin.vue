@@ -39,7 +39,8 @@ export default {
      currentUser:null, //当前用户
       isLogin:false,   //是否登录
       token:'',    //登录后的token
-  
+       avatarUrl :'', //用户头像
+       userId:0,
       loginForm :{
          phone: '',
       pass: ''
@@ -71,8 +72,12 @@ export default {
       if(res.data.code==200){ 
      window.sessionStorage.setItem('token',res.data.token);
         //  window.sessionStorage.setItem('token',res.data.profile.nickname);
+        this.userId=res.data.account.id
       this.currentUser= res.data.profile.nickname
-      this.$store.commit('userid',this.currentUser)  
+      this.avatarUrl=res.data.profile.avatarUrl
+      this.$store.commit('userId',this.userId)
+      this.$store.commit('userName',this.currentUser) 
+       this.$store.commit('avatarUrl',this.avatarUrl)  
          this.$message.success('登录成功')
         setTimeout(()=>{
          

@@ -1,11 +1,8 @@
 <template>
   <div class="clooection-block">
      <h3 class="tilte" style="font-size:24px;">每日推荐</h3>
-          <div class="items">
-          <div class="item-m" @click="songsclick">
-            <img src="../../../assets/img/home/109951165929837566.jpg" alt="">
-          <p class="p-songs">每日歌曲推荐</p>
-            </div>   
+          <div class="items" v-if="recommends.length">
+        
        <div class="item"   
        v-for="(item,index) in recommends" :key="index">  
               <div class="grid-content bg-purple"
@@ -42,6 +39,8 @@
     },
     methods: {
       items(id){
+        console.log(id);
+        this.$store.commit('gedanId',id)
           this.$router.push({name:'detail',params:{id}})
       },
       songsclick(){
@@ -58,15 +57,21 @@
    border-radius: 10%;
  
  }
-
+.clooection-block{
+     margin: 0 auto;
+    width: 100%;
+    position: relative;
+    left: 20%;
+}
   .items{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
+   display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    
   }
   .item{
-   width: 250px;
+   width: 350px;
    margin: 20px 0 20px 0;
   }
   .grid-content{
@@ -78,11 +83,11 @@
 
   }
   .item-count{
-    position: absolute;
+       position: absolute;
     top: 100px;
     margin-top: -80px;
-    left: 120px;
-    color: #fff;
+    left: 100px;
+    color: #eee0e0;
     
   }
   .item-m img{

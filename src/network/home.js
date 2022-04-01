@@ -1,23 +1,11 @@
-import axios from 'axios'
 
-import config from "./request"
+import requests from "./request"
 
-const  http=axios.create(config)
-http.interceptors.request.use((request)=>{
-  return request
-},(error)=>{
-  return Promise.reject(error)
-})
-http.interceptors.response.use((response)=>{
-  return response
-},(error)=>{
-  return Promise.reject(error)
-})
 /**
  * home 轮播图
  */
 export const gethomepagebanner=()=>{
-  return http.get
+  return requests.get
   ('/banner')
 }
 
@@ -25,20 +13,36 @@ export const gethomepagebanner=()=>{
  * 获取华语歌单
  */
  export const getrecommendresource=()=>{
-  return http.get('/recommend/resource')
+  return requests.get('/recommend/resource')
 }
 /**
  * 获取每日推荐歌曲
  */
  export const getrecommendsongs=()=>{
-  return http.get('/recommend/songs')
+  return requests.get('/recommend/songs')
 }
+
+/**
+ * 推荐新音乐
+ */
+ export const getnewsong=(params)=>{
+  return requests.get('/personalized/newsong',{params})
+}
+
+
+/**
+ * 推荐 mv
+ */
+ export const getpersonalizedmv=()=>{
+  return requests.get('/personalized/mv')
+}
+
 
 /**
  * 最新专辑
  */
 export const getalbumnewest=()=>{
-  return http.get('/album/newest')
+  return requests.get('/album/newest')
 }
 
 
@@ -46,5 +50,19 @@ export const getalbumnewest=()=>{
  * 获取音乐 url
  */
        export const getsongurl=(params)=>{
-        return http.get('/song/url',{params})
+        return requests.get('/song/url',{params})
  }
+
+       /**
+ * 喜欢音乐列表
+ */
+        export const getlikelist=(params)=>{
+          return requests.get('/likelist',{params})
+   }
+
+          /**
+ * 获取用户歌单
+ */
+           export const getuserplaylist=(params)=>{
+            return requests.get('/user/playlist',{params})
+     }

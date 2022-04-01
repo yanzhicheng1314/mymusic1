@@ -57,7 +57,7 @@ import {getplaylisthighquality} from '../../../network/play'
       catclick(name){
         console.log(name);
        getplaylisthighquality({cat:name,limit:8}).then((res)=>{
-         console.log(res);
+        
            this.playlist=res.data.playlists
        })
       },
@@ -67,7 +67,7 @@ import {getplaylisthighquality} from '../../../network/play'
     },
       created () {
       getplaylisthighquality({cat:'华语',limit:8}).then((res)=>{
-         console.log(res);
+       
            this.playlist=res.data.playlists
        })
 
@@ -77,13 +77,19 @@ import {getplaylisthighquality} from '../../../network/play'
 </script>
 
 <style scoped>
+.playlisthot{
+  width: 80%;
+  margin: 0 auto;
+ 
+}
 .playlisthot-top{
-  width: 90%;
+  width: 70%;
   height: 170px;
   background-color: seagreen;
     line-height: 170px;
     position: relative;
-    margin: 20px auto;
+    margin: 0 auto;
+    margin-top: 120px;
     border-radius: 10px;
 }
 .top-img img{
@@ -113,25 +119,43 @@ import {getplaylisthighquality} from '../../../network/play'
    margin-left: 20px;
 }
 .itemlist-name{
+  width: 70%;
+  text-align: center;
  display: flex;
-    justify-content:space-evenly;
+   line-height: 40px;
+    align-content: center;
     flex-wrap: wrap;
+    margin: 0 auto 50px;
+    margin-top: 60px;
+   
+}
+.itemlist-name :hover{
+color: crimson;
+}
+.itemlist a{
+   text-decoration: none;
+ color: rgb(46, 46, 45);
 }
 
   .itemlist-name span{
  padding: 0 10px;
  width: 120px;
  height: 40px;
+ 
   }
   .playlist{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     position: relative;
+    width: 70%;
+     margin: 0 auto 50px;
+   
   }
   .playlist-item{
-    width: 530px;
+    width: 450px;
     margin: 10px;
+      overflow: hidden;
   }
   .img-url img{
     width: 240px;

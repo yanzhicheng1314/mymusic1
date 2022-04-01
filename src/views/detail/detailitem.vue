@@ -1,5 +1,5 @@
 <template>
-  <div class="detailitem" v-if="details.length">
+  <div class="detailitem">
     <div class="items">
       <div class="item-img">
         <img :src="details.coverImgUrl" alt="">
@@ -33,11 +33,11 @@
       </div>
     </div>
     <div>
-      <div class="gequlieb">
+      <!-- <div class="gequlieb">
         <span class="lieb">歌曲列表</span> 
-         <span class="pingl">评论({{details.commentCount}})</span> 
-          <span class="pingl">收藏者</span> 
-        </div>
+         <span>评论({{details.commentCount}})</span>
+          <a href="" class="pingl">收藏者</a> 
+        </div> -->
     </div>
   </div>
 </template>
@@ -58,9 +58,12 @@
 </script>
 
 <style scoped>
+
 .gequlieb{
-  margin-left: 30px;
-  margin: 100px 0 30px 30px;
+ margin: 30px auto;
+ width: 70%;
+  
+  
 }
 .lieb{
   font-size: 20px;
@@ -73,7 +76,9 @@
 }
 .items{
  display: flex;
-  justify-content:center
+  justify-content:center;
+  margin: 0 auto;
+  width: 70%;
 }
 .item-img{
   flex: 0;
@@ -85,7 +90,8 @@
     height: 180px;
   }
   .item-tltie{
-    flex: 1;
+   height: 310px;
+   overflow: hidden;
   }
   .item-gedan{
     color: brown;
